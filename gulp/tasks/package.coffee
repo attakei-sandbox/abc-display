@@ -20,7 +20,8 @@ gulp.task 'prod', (callback) ->
   config.production = true
   runSequence(
     'clean',
-    'build'
+    'build',
+    callback
   )
 
 gulp.task 'build', (callback) ->
@@ -35,4 +36,3 @@ gulp.task 'webpack', ->
   if config.production
     gPipe = gPipe.pipe(uglify())
   gPipe.pipe(gulp.dest(config.dest.package))
-
