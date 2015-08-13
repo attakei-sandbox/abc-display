@@ -1,0 +1,45 @@
+{
+  "name": "abc-display",
+  "version": "0.0.1",
+  "description": "a, b, c, display!",
+  "bugs": {
+    "url": "https://github.com/attakei/abc-display/issues"
+  },
+  "main": "",
+  "scripts": {
+    "test": "gulp mocha"
+  },
+  "author": "attakei",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "coffee-script": "^1.9.3",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-jade": "^1.0.1",
+    "gulp-json-transform": "^0.2.0",
+    "gulp-less": "^3.0.3",
+    "gulp-mocha": "^2.1.3",
+    "gulp-react": "^3.0.1",
+    "gulp-react-jade": "git://github.com/mizchi/gulp-react-jade",
+    "gulp-strip-debug": "^1.0.2",
+    "gulp-uglify": "^1.1.0",
+    "jsdom": "^3.1.2",
+    "mocha": "^2.2.5",
+    "node-libs-browser": "^0.5.2",
+    "power-assert": "^0.11.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.2",
+    "webpack": "^1.10.1",
+    "webpack-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "arda": "^0.13.1",
+    "bluebird": "^2.9.34",
+    "clone": "^1.0.2",
+    "enum": "^2.1.0",
+    "json-loader": "^0.5.2",
+    "react": "^0.13.3"
+  }
+}
