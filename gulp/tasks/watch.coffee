@@ -10,9 +10,10 @@ gulp.task 'watch', (callback) ->
   gulp.watch './src/**/*', ['build']
 
 
-gulp.task 'watch:develop', (callback) ->
-  gulp.watch './src/**/*', ['develop']
+gulp.task 'watch:compile', () ->
+  gulp.watch 'src/**/*.coffee', ['compile:coffee']
+  gulp.watch 'src/**/*.jade', ['compile:jade']
 
 
-gulp.task 'watch:mocha', (callback) ->
-  gulp.watch ['./src/**/*', './test/**/*'], ['mocha']
+gulp.task 'watch:mocha', ['watch:compile'], () ->
+  gulp.watch ['lib/**/*', 'test/**/*'], ['mocha']
