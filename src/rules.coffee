@@ -18,10 +18,11 @@ class Rule_5maru2batsu extends YamaRules.RuleBase
   # 連答権を持っている状態で正解すると、無条件で勝抜け分の◯を得る
   _judgeRight: (player) ->
     if @currentRightAnswer == player
-      player.rights = @toWin
+      score = 2
     else
-      player.rights++
-      @currentRightAnswer = player
+      score = 1
+    player.rights += score
+    @currentRightAnswer = player
 
   # 正解時に✕を1個付与する。また、連答権を持っていた場合に失う
   _judgeWrong: (player) ->

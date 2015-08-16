@@ -10,24 +10,27 @@ PlayerState = require('yama').players.PlayerState
 describe '5maru2batsu tests', () ->
   describe '#judge', () ->
     rule = new target.Rule_5maru2batsu
-    player = {rights: 0, wrongs: 0}
 
     it 'with right', () ->
+      player = {rights: 0, wrongs: 0}
       rule.judge(player, Judge.Right)
       assert.equal 1, player.rights
       assert.equal player, rule.currentRightAnswer
 
     it 'with right after right', () ->
+      player = {rights: 0, wrongs: 0}
       rule.judge(player, Judge.Right)
       rule.judge(player, Judge.Right)
-      assert.equal 5, player.rights
+      assert.equal 3, player.rights
       assert.equal player, rule.currentRightAnswer
 
     it 'with wrong', () ->
+      player = {rights: 0, wrongs: 0}
       rule.judge(player, Judge.Wrong)
       assert.equal 1, player.wrongs
 
     it 'with wrong after right', () ->
+      player = {rights: 0, wrongs: 0}
       rule.currentRightAnswer = player
       rule.judge(player, Judge.Wrong)
       assert.equal null, rule.currentRightAnswer
