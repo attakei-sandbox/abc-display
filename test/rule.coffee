@@ -35,7 +35,6 @@ describe '5maru2batsu tests', () ->
       rule.judge(player, Judge.Wrong)
       assert.equal null, rule.currentRightAnswer
 
-
   describe '#checkNextState', () ->
     rule = new target.Rule_5maru2batsu
     player = {rights: 0, wrongs: 0}
@@ -49,7 +48,6 @@ describe '5maru2batsu tests', () ->
       player.rights = 0
       player.wrongs = 2
       assert.equal PlayerState.Lose, rule.checkNextState(player)
-
 
   it '#provideAdvantage', () ->
     rule = new target.Rule_5maru2batsu
