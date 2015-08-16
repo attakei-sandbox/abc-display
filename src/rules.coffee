@@ -7,6 +7,8 @@ class Rule_5maru2batsu extends YamaRules.RuleBase
   toWin: 5
   # 失格誤答数
   toLose: 2
+  # 正解数アドバンテージ
+  advantages: [3, 2, 2, 1, 1, 1, ]
 
   constructor: ->
     # 連答権所持プレイヤー
@@ -33,5 +35,8 @@ class Rule_5maru2batsu extends YamaRules.RuleBase
   _checkStateLose: (player) ->
     player.wrongs >= @toLose
 
-@Rule_5maru2batsu = Rule_5maru2batsu
+  provideAdvantage: (players) ->
+    for value, idx in @advantages
+      players[idx].rights = value
 
+@Rule_5maru2batsu = Rule_5maru2batsu

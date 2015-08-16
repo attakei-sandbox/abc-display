@@ -46,3 +46,21 @@ describe '5maru2batsu tests', () ->
       player.rights = 0
       player.wrongs = 2
       assert.equal PlayerState.Lose, rule.checkNextState(player)
+
+
+  it '#provideAdvantage', () ->
+    rule = new target.Rule_5maru2batsu
+    players = [
+      {rights: 0, wrongs: 0},
+      {rights: 0, wrongs: 0},
+      {rights: 0, wrongs: 0},
+      {rights: 0, wrongs: 0},
+      {rights: 0, wrongs: 0},
+      {rights: 0, wrongs: 0},
+      {rights: 0, wrongs: 0},
+    ]
+    rule.provideAdvantage(players)
+    assert.equal 3, players[0].rights
+    assert.equal 2, players[1].rights
+    assert.equal 1, players[3].rights
+    assert.equal 0, players[6].rights
