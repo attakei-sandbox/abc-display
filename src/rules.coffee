@@ -14,6 +14,9 @@ class Rule_5maru2batsu extends YamaRules.RuleBase
     # 連答権所持プレイヤー
     @currentRightAnswer = null
 
+  getTitle: ->
+    '連答つき5◯2×クイズ'
+
   # 正解時に◯を1個付与する。また、連答権を得る
   # 連答権を持っている状態で正解すると、無条件で勝抜け分の◯を得る
   _judgeRight: (player) ->
