@@ -7,6 +7,12 @@ Judge = require('yama').rules.Judge
 PlayerState = require('yama').players.PlayerState
 
 
+describe 'RuleSelector tests', () ->
+  describe 'as list', () ->
+    selector = new target.RuleSelector
+    assert.equal 1, selector.getAll().length
+
+
 describe '5maru2batsu tests', () ->
   describe '#judge', () ->
     rule = new target.Rule_5maru2batsu

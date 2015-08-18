@@ -1,6 +1,21 @@
 YamaRules = require('yama').rules
 
 
+# ルール選択
+class RuleSelector
+  constructor: ->
+    @_list = []
+    @setAll()
+
+  setAll: ->
+    @_list.push(new Rule_5maru2batsu)
+
+  getAll: ->
+    return @_list
+
+@RuleSelector = RuleSelector
+
+
 # 連答つき5◯2×クイズ
 class Rule_5maru2batsu extends YamaRules.RuleBase
   # 勝抜正解数
