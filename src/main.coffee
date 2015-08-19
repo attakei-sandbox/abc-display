@@ -1,7 +1,7 @@
 Promise = require 'bluebird'
 Promise.resolve require './globals'
 
-StartupContext = require('./contexts/startup/index').StartupContext
+StartupContext = require('./contexts/startup').StartupContext
 RuleSelector = require('./rules').RuleSelector
 PlayerManager = Yama.players.PlayerManager
 
